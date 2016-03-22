@@ -1,0 +1,24 @@
+<%= form_for(@note) do |f| %>
+  <% if @note.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= @note.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+        <% @note.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    月　日
+  <%= f.date_select :date, {use_month_numbers: true},{class: 'form-control date-picker'} %>
+  摘　要
+    <%= f.text_field :content, { class: "form-control content-field" } %>
+  収　入
+    <%= f.text_field :income, { class: "form-control income-field" } %>
+  支　払
+    <%= f.text_field :payment, { class: "form-control payment-field" } %>
+  差引残高
+    <%= f.text_field :total, { class: "form-control total-field" } %>
+  <%= f.submit "投稿する",{class: "btn primary-btn"} %>
+<% end %>

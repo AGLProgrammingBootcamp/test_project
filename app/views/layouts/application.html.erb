@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>俺の家計簿</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div id="logo">俺の家計簿</div>
+      <ul class="header-right nav nav-pills">
+        <li><%= link_to "トップ", root_path %></li>
+        <li><%= link_to "新規投稿", new_path %></li>
+        <li><%= link_to "履歴", list_path %></li>
+      </ul>
+    </div>
+  </header>
+  <div class = "container">
+  <%= yield %>
+  </div>
+<footer>
+  <div class="panel panel-default">
+    <div class="panel-footer footer">© 2016 KAKEIBO @AGL</div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

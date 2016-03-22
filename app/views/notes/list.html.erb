@@ -1,0 +1,24 @@
+
+<h1>履歴</h1>
+<table class = "notes">
+  <tr>
+    <td>月　日</td>
+    <td>摘　要</td>
+    <td>収　入</td>
+    <td>支　払</td>
+    <td>差引残高</td>
+    <td></td>
+  </tr>
+  <% @notes.each do |note| %>
+  <tr>
+      <span class="content">
+      <td><%= note.date%></td>
+      <td><%= note.content %></td>
+      <td><%= note.income %></td>
+      <td><%= note.payment %></td>
+      <td><%= note.total %></td>
+      <td><%= link_to "削除", destroy_note_path(note.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></td>
+      </span>
+     </tr>
+  <% end %>
+</table>
